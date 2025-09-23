@@ -17,9 +17,6 @@ public class ShopPanel : MonoBehaviour
             ShopItemView spawned = _factory.Get(item, _itemsParrent);
             spawned.Click += OnItemViewClicked;
 
-            spawned.UnSelect();
-            spawned.UnHighlight();
-
             _shopItems.Add(spawned);
         }
     }

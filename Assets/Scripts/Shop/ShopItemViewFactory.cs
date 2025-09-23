@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ShopFactory", menuName = "Shop/Factory")]
 public class ShopItemViewFactory : ScriptableObject
 {
-    [SerializeField] private ShopItemView _carShopItemPrefab;
+    [SerializeField] private ShopItemView _shopItemPrefab;
 
     public ShopItemView Get(ShopItem item, Transform parent)
     {
@@ -13,7 +13,11 @@ public class ShopItemViewFactory : ScriptableObject
         switch (item)
         {
             case CarShopItem carShopItem:
-                instance = Instantiate(_carShopItemPrefab, parent);
+                instance = Instantiate(_shopItemPrefab, parent);
+                break;
+
+            case WorkerShopItem workerShopItem:
+                instance = Instantiate(_shopItemPrefab, parent);
                 break;
 
             default:

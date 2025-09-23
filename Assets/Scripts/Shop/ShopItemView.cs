@@ -1,5 +1,4 @@
 using System;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -8,8 +7,8 @@ public class ShopItemView : MonoBehaviour, IPointerClickHandler
 {
     public event Action<ShopItemView> Click;
 
-    [SerializeField] private Sprite _standardBackground;
-    [SerializeField] private Sprite _highlightedBackground;
+
+    [SerializeField] private Sprite _buyedBackground;
 
     [SerializeField] private Image _contentImage;
     [SerializeField] private Image _lockedImage;
@@ -29,7 +28,6 @@ public class ShopItemView : MonoBehaviour, IPointerClickHandler
     public void Initialize(ShopItem item)
     {
         _backgroundImage = GetComponent<Image>();
-        _backgroundImage.sprite = _standardBackground;
 
         Item = item;
 
@@ -54,10 +52,9 @@ public class ShopItemView : MonoBehaviour, IPointerClickHandler
         _priceView.Show(Price);
     }
 
-    public void Select() => _selectionText.gameObject.SetActive(true);
-    public void UnSelect() => _selectionText.gameObject.SetActive(false);
-
-    public void Highlight() => _backgroundImage.sprite = _highlightedBackground;
-    public void UnHighlight() => _backgroundImage.sprite = _standardBackground;
+    public void Buy()
+    {
+        _backgroundImage.sprite = _buyedBackground;
+    }
 
 }
