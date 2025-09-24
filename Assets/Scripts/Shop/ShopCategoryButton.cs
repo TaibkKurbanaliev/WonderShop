@@ -9,7 +9,7 @@ public class ShopCategoryButton : MonoBehaviour
 
     [SerializeField] private Image _image;
     [SerializeField] private Color _selectedColor;
-    [SerializeField] private Color _unSelectedColor;
+    [SerializeField] private Color _unselectedColor;
 
     private Button _button;
 
@@ -35,7 +35,7 @@ public class ShopCategoryButton : MonoBehaviour
 
     public void UnSelect()
     {
-        _image.color = _unSelectedColor;
+        _image.color = _unselectedColor;
     }
 
     private void OnClick()

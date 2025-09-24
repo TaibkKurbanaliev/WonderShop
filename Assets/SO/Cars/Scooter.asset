@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a30f52e7e4dab0a42b4eb23f8c33be73, type: 3}
+  m_Name: Scooter
+  m_EditorClassIdentifier: Assembly-CSharp::CarShopItem
+  <Model>k__BackingField: {fileID: 706414326153113121, guid: bd33e554b7e7d644a82fdbe224f2fefa, type: 3}
+  <Image>k__BackingField: {fileID: 21300000, guid: e330e684cc5f0fd4bbf4cb04b1b299fe, type: 3}
+  <Price>k__BackingField: 500
+  <CarType>k__BackingField: 2

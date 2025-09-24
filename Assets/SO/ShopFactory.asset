@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67b7e78e1aeb2b848a3774b208f2fa47, type: 3}
   m_Name: ShopFactory
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemViewFactory
-  _carShopItemPrefab: {fileID: 0}
+  _shopItemPrefab: {fileID: 2162011551690547987, guid: 76d1d3fc200e5a64f8ad3345e00d2798, type: 3}

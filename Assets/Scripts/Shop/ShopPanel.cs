@@ -16,6 +16,9 @@ public class ShopPanel : MonoBehaviour
         {
             ShopItemView spawned = _factory.Get(item, _itemsParrent);
             spawned.Click += OnItemViewClicked;
+            
+            if (spawned.IsLocked) 
+                spawned.Lock();
 
             _shopItems.Add(spawned);
         }

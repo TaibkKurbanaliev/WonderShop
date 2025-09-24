@@ -14,6 +14,7 @@ public class ShopItemView : MonoBehaviour, IPointerClickHandler
     [SerializeField] private Image _lockedImage;
 
     [SerializeField] private IntValueView _priceView;
+    [SerializeField] private IntValueView _popularityView;
 
     [SerializeField] private Image _selectionText;
 
@@ -23,6 +24,7 @@ public class ShopItemView : MonoBehaviour, IPointerClickHandler
 
     public ShopItem Item { get; private set; }
     public int Price => Item.Price;
+    public int Popularity => Item.Popularity;
     public GameObject Model => Item.Model;
 
     public void Initialize(ShopItem item)
@@ -42,6 +44,7 @@ public class ShopItemView : MonoBehaviour, IPointerClickHandler
     {
         IsLocked = true;
         _lockedImage.gameObject.SetActive(IsLocked);
+        _popularityView.Show(Popularity);
         _priceView.Hide();
     }
 
@@ -50,6 +53,7 @@ public class ShopItemView : MonoBehaviour, IPointerClickHandler
         IsLocked = false;
         _lockedImage.gameObject.SetActive(IsLocked);
         _priceView.Show(Price);
+        _popularityView.Hide();
     }
 
     public void Buy()

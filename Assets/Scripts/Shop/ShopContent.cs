@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "Content", menuName = "Shop/Content")]
 public class ShopContent : ScriptableObject
 {
     [SerializeField] private List<CarShopItem> _carShopItems;
@@ -13,7 +14,7 @@ public class ShopContent : ScriptableObject
 
     private void OnValidate()
     {
-        var haveCarDuplicates = _carShopItems.GroupBy(car => car.CarType).Where(array => array.Count() > 1).Count() > 1;
+        /*var haveCarDuplicates = _carShopItems.GroupBy(car => car.CarType).Where(array => array.Count() > 1).Count() > 1;
 
         if (haveCarDuplicates)
             throw new InvalidOperationException(nameof(_carShopItems));
@@ -21,6 +22,6 @@ public class ShopContent : ScriptableObject
         var haveWorkerDuplicates = _workerShopItems.GroupBy(worker => worker.WorkerType).Where(array => array.Count() > 1).Count() > 1;
 
         if (haveWorkerDuplicates)
-            throw new InvalidOperationException(nameof(_carShopItems));
+            throw new InvalidOperationException(nameof(_carShopItems));*/
     }
 }
