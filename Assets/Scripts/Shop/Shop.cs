@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Shop : MonoBehaviour
 {
@@ -8,12 +9,14 @@ public class Shop : MonoBehaviour
 
     [SerializeField] private ShopCategoryButton _carsButton;
     [SerializeField] private ShopCategoryButton _workersButton;
+    [SerializeField] private Button _closeButton;
     [SerializeField] private ShopPanel _shopPanel;
 
     private void OnEnable()
     {
         _carsButton.Clicked += OnCarsButtonClick;
         _workersButton.Clicked += OnWorkersButtonClick;
+        _closeButton.onClick.AddListener(OnClose);
     }
 
     private void OnDisable()
@@ -34,5 +37,12 @@ public class Shop : MonoBehaviour
         _carsButton.UnSelect();
         _workersButton.Select();
         _shopPanel.Show(_contentItems.WorkerShopItems.Cast<ShopItem>());
+    }
+
+    private void OnClose()
+    {
+        _carsButton.UnSelect();
+        _workersButton.UnSelect();
+        gameObject.SetActive(false);
     }
 }

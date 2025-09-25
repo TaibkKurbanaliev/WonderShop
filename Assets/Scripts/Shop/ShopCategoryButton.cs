@@ -10,6 +10,8 @@ public class ShopCategoryButton : MonoBehaviour
     [SerializeField] private Image _image;
     [SerializeField] private Color _selectedColor;
     [SerializeField] private Color _unselectedColor;
+    [SerializeField] private GameObject _shop;
+
 
     private Button _button;
 
@@ -30,6 +32,7 @@ public class ShopCategoryButton : MonoBehaviour
 
     public void Select()
     {
+        
         _image.color = _selectedColor;
     }
 
@@ -40,6 +43,12 @@ public class ShopCategoryButton : MonoBehaviour
 
     private void OnClick()
     {
+        if (!_shop.activeSelf)
+        {
+            _shop.SetActive(true);
+            Select();
+        }
+
         Clicked?.Invoke();
     }
 }
